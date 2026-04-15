@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Archivo:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black: #0a0a0a;
+  --off-black: #111111;
+  --dark: #1a1a1a;
+  --mid: #2a2a2a;
+  --border: rgba(255,255,255,0.08);
+  --border-hover: rgba(255,255,255,0.18);
+  --gold: #c9a96e;
+  --gold-light: #e8c98a;
+  --white: #f5f2ee;
+  --white-dim: rgba(245,242,238,0.6);
+  --white-dimmer: rgba(245,242,238,0.35);
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Archivo', system-ui, sans-serif;
+  --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--sans);
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; font-family: inherit; border: none; background: none; color: inherit; }
+input, select { font-family: inherit; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--off-black); }
+::-webkit-scrollbar-thumb { background: var(--mid); border-radius: 2px; }
+
+/* Typography */
+.display { font-family: var(--serif); font-weight: 300; line-height: 1.05; letter-spacing: -0.02em; }
+.display-italic { font-family: var(--serif); font-style: italic; font-weight: 300; }
+.overline { font-family: var(--sans); font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--white-dimmer); }
+
+/* Layout */
+.container { max-width: 1320px; margin: 0 auto; padding: 0 2rem; }
+.container-tight { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
+/* Divider */
+.divider { border: none; border-top: 1px solid var(--border); }
+
+/* Skeleton */
+@keyframes shimmer {
+  0% { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, var(--dark) 25%, var(--mid) 50%, var(--dark) 75%);
+  background-size: 600px 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 2px;
+}
+
+/* Reveal animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.reveal { animation: fadeUp 0.7s var(--transition) both; }
+.reveal-1 { animation-delay: 0.1s; }
+.reveal-2 { animation-delay: 0.2s; }
+.reveal-3 { animation-delay: 0.3s; }
+.reveal-4 { animation-delay: 0.4s; }
+
+/* Cursor */
+body { cursor: default; }
+a, button, [role=button], select, input[type=checkbox], input[type=radio], label { cursor: pointer; }
