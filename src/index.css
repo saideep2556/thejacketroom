@@ -19,7 +19,7 @@
   --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   background: var(--black);
@@ -79,4 +79,4 @@ input, select { font-family: inherit; }
 
 /* Cursor */
 body { cursor: default; }
-a, button, [role=button], select, input[type=checkbox], input[type=radio], label { cursor: pointer; }
+a, button, [role=button] { cursor: pointer; }
